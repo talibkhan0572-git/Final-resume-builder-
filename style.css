@@ -1,0 +1,48 @@
+/* Apply the Inter font globally */
+body { 
+    font-family: 'Inter', sans-serif; 
+}
+
+/* Custom Scrollbar for the Editor sidebar */
+.custom-scroll::-webkit-scrollbar { 
+    width: 6px; 
+}
+.custom-scroll::-webkit-scrollbar-track { 
+    background: #f1f5f9; 
+}
+.custom-scroll::-webkit-scrollbar-thumb { 
+    background-color: #cbd5e1; 
+    border-radius: 20px; 
+}
+
+/* === PRINT SETTINGS (Critical for PDF Export) === */
+@media print {
+    /* Hide standard browser headers/footers */
+    @page { 
+        margin: 0; 
+        size: auto; 
+    }
+
+    /* Ensure background colors (like the grey text pills) are printed */
+    body { 
+        -webkit-print-color-adjust: exact; 
+        print-color-adjust: exact;
+        background: white; 
+    }
+
+    /* Hide the sidebar/editor when printing */
+    .no-print { 
+        display: none !important; 
+    }
+
+    /* Force the A4 preview page to take up the full paper size */
+    .print-area { 
+        display: block !important; 
+        width: 100%; 
+        height: auto; 
+        overflow: visible; 
+        padding: 0 !important;
+        margin: 0 !important;
+        box-shadow: none !important;
+    }
+}
